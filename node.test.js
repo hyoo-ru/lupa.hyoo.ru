@@ -4165,7 +4165,7 @@ var $;
                 color: $mol_theme.hover,
             },
         },
-        ':focus-visible': {
+        ':focus': {
             outline: 'none',
             background: {
                 color: $mol_theme.hover,
