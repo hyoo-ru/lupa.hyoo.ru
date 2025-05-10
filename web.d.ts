@@ -51,6 +51,17 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    var $mol_dom_context: typeof globalThis;
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
+    var $mol_dom: typeof globalThis;
+}
+
+declare namespace $ {
     function $mol_offline_web(): void;
 }
 
@@ -115,17 +126,6 @@ declare namespace $ {
         static destructor(): void;
         toString(): string;
     }
-}
-
-declare namespace $ {
-    var $mol_dom_context: typeof globalThis;
-}
-
-declare namespace $ {
-}
-
-declare namespace $ {
-    var $mol_dom: typeof globalThis;
 }
 
 declare namespace $ {
