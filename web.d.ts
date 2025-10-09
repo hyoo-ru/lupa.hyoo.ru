@@ -1092,9 +1092,6 @@ declare namespace $ {
             [key: string]: string | number | boolean | null;
         };
         attr(): {};
-        style_size(): {
-            [key: string]: string | number;
-        };
         style(): {
             [key: string]: string | number;
         };
