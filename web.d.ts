@@ -1140,6 +1140,21 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=stack.view.tree.d.ts.map
+declare namespace $.$$ {
+    class $mol_video_player extends $.$mol_video_player {
+        dom_node(): HTMLVideoElement;
+        volume(next?: number): number;
+        time(next?: number): number;
+        duration(): number;
+        playing(next?: boolean): boolean;
+        play(): void;
+        pause(): void;
+    }
+}
+
+declare namespace $ {
+}
+
 declare namespace $ {
 
 	export class $mol_video_player extends $mol_view {
@@ -1190,18 +1205,16 @@ declare namespace $ {
 
 //# sourceMappingURL=player.view.tree.d.ts.map
 declare namespace $.$$ {
-    class $mol_video_player extends $.$mol_video_player {
-        dom_node(): HTMLVideoElement;
-        volume(next?: number): number;
-        time(next?: number): number;
-        duration(): number;
-        playing(next?: boolean): boolean;
-        play(): void;
-        pause(): void;
+    class $mol_video_camera extends $.$mol_video_camera {
+        stream_raw(): MediaStream & {
+            destructor: () => void;
+        };
+        stream(): MediaStream & {
+            destructor: () => void;
+        };
+        dom_node_actual(): HTMLVideoElement;
+        transform(): string;
     }
-}
-
-declare namespace $ {
 }
 
 declare namespace $ {
@@ -1245,19 +1258,6 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=camera.view.tree.d.ts.map
-declare namespace $.$$ {
-    class $mol_video_camera extends $.$mol_video_camera {
-        stream_raw(): MediaStream & {
-            destructor: () => void;
-        };
-        stream(): MediaStream & {
-            destructor: () => void;
-        };
-        dom_node_actual(): HTMLVideoElement;
-        transform(): string;
-    }
-}
-
 declare namespace $ {
     type $mol_style_pseudo_class = ':active' | ':any' | ':any-link' | ':checked' | ':default' | ':defined' | ':dir(rtl)' | ':dir(ltr)' | ':disabled' | ':empty' | ':enabled' | ':first' | ':first-child' | ':first-of-type' | ':fullscreen' | ':focus' | ':focus-visible' | ':focus-within' | ':hover' | ':indeterminate' | ':in-range' | ':invalid' | ':last-child' | ':last-of-type' | ':left' | ':link' | `:not(${string})` | `:nth-child(${string})` | `:nth-last-child(${string})` | `:nth-of-type(${string})` | `:nth-last-of-type(${string})` | ':only-child' | ':only-of-type' | ':optional' | ':out-of-range' | ':placeholder-shown' | ':read-only' | ':read-write' | ':required' | ':right' | ':root' | ':scope' | ':target' | ':valid' | ':visited';
 }
@@ -1302,6 +1302,21 @@ declare namespace $ {
     function $mol_style_define<Component extends $mol_view, Config extends $mol_style_guard<Component, Config>>(Component: new () => Component, config: Config): HTMLStyleElement | null;
 }
 
+declare namespace $.$$ {
+    class $mol_link extends $.$mol_link {
+        uri_toggle(): string;
+        uri(): string;
+        uri_off(): string;
+        uri_native(): URL;
+        current(): boolean;
+        file_name(): string;
+        minimal_height(): number;
+        external(): boolean;
+        target(): '_self' | '_blank' | '_top' | '_parent' | string;
+        hint_safe(): string;
+    }
+}
+
 declare namespace $ {
 
 	export class $mol_link extends $mol_view {
@@ -1337,21 +1352,6 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=link.view.tree.d.ts.map
-declare namespace $.$$ {
-    class $mol_link extends $.$mol_link {
-        uri_toggle(): string;
-        uri(): string;
-        uri_off(): string;
-        uri_native(): URL;
-        current(): boolean;
-        file_name(): string;
-        minimal_height(): number;
-        external(): boolean;
-        target(): '_self' | '_blank' | '_top' | '_parent' | string;
-        hint_safe(): string;
-    }
-}
-
 declare namespace $ {
 }
 
@@ -1359,6 +1359,14 @@ declare namespace $ {
     class $mol_state_time extends $mol_object {
         static task(precision: number, reset?: null): $mol_after_timeout | $mol_after_frame;
         static now(precision: number): number;
+    }
+}
+
+declare namespace $.$$ {
+    class $mol_svg extends $.$mol_svg {
+        computed_style(): Record<string, any>;
+        font_size(): number;
+        font_family(): any;
     }
 }
 
@@ -1375,14 +1383,6 @@ declare namespace $ {
 }
 
 //# sourceMappingURL=svg.view.tree.d.ts.map
-declare namespace $.$$ {
-    class $mol_svg extends $.$mol_svg {
-        computed_style(): Record<string, any>;
-        font_size(): number;
-        font_family(): any;
-    }
-}
-
 declare namespace $ {
 }
 
@@ -1478,10 +1478,9 @@ declare namespace $ {
     function $mol_charset_decode(buffer: AllowSharedBufferSource, encoding?: $mol_charset_encoding): string;
 }
 
-declare var $node: any;
-
 declare namespace $ {
-    function $mol_charset_encode(value: string): Uint8Array<ArrayBuffer>;
+    function $mol_charset_encode(str: string): Uint8Array<ArrayBuffer>;
+    function $mol_charset_encode_to(str: string, buf: Uint8Array<ArrayBuffer>, from?: number): number;
 }
 
 declare namespace $ {
