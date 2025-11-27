@@ -86,6 +86,10 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    function $node_internal_check(name: string): boolean;
+}
+
+declare namespace $ {
     function $mol_promise_like(val: any): val is Promise<any>;
 }
 
