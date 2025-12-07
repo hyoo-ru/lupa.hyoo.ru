@@ -163,7 +163,6 @@
     "$mol_locale"
   ],
   "dependencies": {
-    "internal": "*",
     "jsdom": "*"
   }
 }
