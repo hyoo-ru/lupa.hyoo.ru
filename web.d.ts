@@ -125,6 +125,7 @@ declare namespace $ {
         static toJSON(): any;
         destructor(): void;
         static destructor(): void;
+        [Symbol.dispose](): void;
         toString(): string;
     }
 }
@@ -1502,22 +1503,9 @@ declare namespace $ {
         }): number;
         read(): Uint8Array<ArrayBuffer>;
         truncate(size: number): void;
+        flush(): void;
         close(): void;
         destructor(): void;
-    }
-}
-
-declare namespace $ {
-    class $mol_file_transaction_web extends $mol_file_transaction {
-        write(options: {
-            buffer: ArrayBufferView | string | readonly ArrayBufferView[];
-            offset?: number | null;
-            length?: number | null;
-            position?: number | null;
-        }): number;
-        truncate(size: number): void;
-        read(): Buffer<ArrayBuffer>;
-        close(): void;
     }
 }
 
